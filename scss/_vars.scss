@@ -1,0 +1,44 @@
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    35: ($spacer * 2.2125),
+    40: ($spacer * 2.5),
+    90: ($spacer * 5.625),
+    100: ($spacer * 6.25),
+    140: ($spacer * 8.75),
+    // 8: ($spacer * 6),
+    // 9: ($spacer * 7),
+    // 10: ($spacer * 8),
+  ),
+  $spacers
+);
+
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  80: 80%,
+  100: 100%
+);
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      @each $prop, $abbrev in (width: w, height: h) {
+        @each $size, $length in $sizes {
+          .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        }
+      }
+    }
+  }

@@ -1,0 +1,27 @@
+@mixin font-size($fs-map) {
+
+    @each $fs-breakpoint,
+    $fs-font-size in $fs-map {
+        @if $fs-breakpoint==null {
+            font-size: $fs-font-size;
+        }
+
+        @else {
+            @media screen and (min-width: $fs-breakpoint) {
+                font-size: $fs-font-size;
+            }
+        }
+    }
+}
+
+
+
+$big-title: ( null: 68px,  768px: 73px, 992px: 90px, 1200px: 95px);
+
+$medium-title: ( null: 24px, 768px: 30px, 992px: 36px, 1200px: 39px);
+
+$h1: ( null: 60px, 768px: 60px, 992px: 90px, 1200px: 95px);
+$h1-span: ( null: 26px, 768px: 32px, 992px: 42px, 1200px: 48px);
+
+
+$p:  ( null: 18px, 992px: 20px, 1200px: 21px, 1440px: 22px);

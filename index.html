@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="build/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+  <title>UW-MAP - Seabed Classification from Multispectral Multibeam Echosounder Data</title>
+  <meta name="description" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+
+</head>
+
+<body class="home-page">
+
+  <nav class="navbar navbar-expand-lg main-nav w-100 p-0">
+    <div class="container-fluid px-0 d-flex">
+      <button class="navbar-toggler px-0" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <div class="hamburger-lines m-2">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+      </button>
+      <ul class="nav navbar-nav user-nav d-flex flex-row ml-auto order-2">
+        <li class="nav-item ml-lg-auto">
+          <a class="nav-link py-3" href="">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_11_271)">
+                <path
+                  d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z"
+                  fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_11_271">
+                  <rect width="25" height="25" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            Hello Fotis P.
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-3 logout" href="">Logout</a>
+        </li>
+      </ul>
+      <div class="collapse navbar-collapse d-lg-flex justify-content-between order-1">
+        <ul class="nav navbar-nav d-flex main-nav-main">
+          <li class="nav-item feedback">
+            <a class="nav-link py-3 mx-0" href="">
+              SEND US YOUR FEEDBACK
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3" href="">
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.1094 0C5.42202 0 0 5.42397 0 12.1094C0 18.7987 5.42202 24.2188 12.1094 24.2188C18.7967 24.2188 24.2188 18.7987 24.2188 12.1094C24.2188 5.42397 18.7967 0 12.1094 0ZM12.1094 5.37109C13.242 5.37109 14.1602 6.28926 14.1602 7.42188C14.1602 8.55449 13.242 9.47266 12.1094 9.47266C10.9768 9.47266 10.0586 8.55449 10.0586 7.42188C10.0586 6.28926 10.9768 5.37109 12.1094 5.37109ZM14.8438 17.7734C14.8438 18.097 14.5814 18.3594 14.2578 18.3594H9.96094C9.63735 18.3594 9.375 18.097 9.375 17.7734V16.6016C9.375 16.278 9.63735 16.0156 9.96094 16.0156H10.5469V12.8906H9.96094C9.63735 12.8906 9.375 12.6283 9.375 12.3047V11.1328C9.375 10.8092 9.63735 10.5469 9.96094 10.5469H13.0859C13.4095 10.5469 13.6719 10.8092 13.6719 11.1328V16.0156H14.2578C14.5814 16.0156 14.8438 16.278 14.8438 16.6016V17.7734Z"
+                  fill="white" />
+              </svg>
+              HOW TO USE
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3" href="">
+              <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.5339 0.00235704C21.1554 0.13734 16.428 0.628659 13.5095 2.41512C13.3082 2.53838 13.194 2.75757 13.194 2.98673V18.7797C13.194 19.281 13.7422 19.5978 14.2044 19.3652C17.207 17.8539 21.5495 17.4416 23.6966 17.3287C24.4297 17.2901 24.9996 16.7024 24.9996 15.998V1.33482C25 0.566159 24.3333 -0.0427818 23.5339 0.00235704ZM11.49 2.41512C8.57205 0.628659 3.84462 0.137774 1.46615 0.00235704C0.666667 -0.0427818 0 0.566159 0 1.33482V15.9984C0 16.7033 0.569879 17.291 1.30295 17.3292C3.45095 17.442 7.79557 17.8548 10.7982 19.3669C11.2591 19.5991 11.8056 19.2827 11.8056 18.7827V2.97892C11.8056 2.74932 11.6918 2.53882 11.49 2.41512Z"
+                  fill="white" />
+              </svg>
+              DOCUMENTATION
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="top pt-4 pt-lg-35">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-10 d-lg-flex align-items-center text-center text-lg-left">
+          <img class="logo" src="images/MM.svg">
+          <div class="texts">
+            <div class="logo-title pb-2 pb-lg-0">
+              Seabed Classification
+              <span>from Multispectral Multibeam Echosounder Data</span>
+            </div>
+            <div class="logo-subtitle">
+              An EOSC Cloud Service
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-2 d-flex align-items-center justify-content-end">
+          <img class="logo-2" src="images/neanias_logo.svg">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <section class="top-info text-center container-fluid container-p">
+    <h1 class="font-weight-bold pb-3 pb-lg-35"><img src="images/dots.svg">UW-MAP<span>An Innovative EOSC Cloud Service</span></h1>
+    <div class="tag-line pb-3 pb-lg-35">Simple<span></span>Fast<span></span>Accurate</div>
+    <p class="w-lg-75 mx-auto"><b>Upload</b> your multifrequency backscatter data & <b>Enjoy</b> High-quality Seabed Maps</p>
+  </section>
+
+  <section class="form container-fluid container-p">
+
+    <div class="form-step form-step--1 mt-90 mt-lg-140">
+      <div class="form-step--title p-4 p-lg-40">
+        01.Select Input Data
+      </div>
+      <div class="form-step--form">
+        <div class="form-group">
+          <label class="d-block" for="user-data">Upload your multispectral backscatter data</label>
+          <form action="upload" class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data" accept="image/tiff,.tif">
+          </form>
+        </div>
+        <div class="or text-center"><span>OR</span></div>
+        <div class="form-group">
+          <label class="d-block" for="sample-data">Run the application by selecting from the Demo datasets</label>
+          <div class="select-wrapper">
+            <div class="notice d-none pb-1 mt-n2">*Please remove added file above to select sample Data</div>
+            <select class="form-control" id="sample-dataset">
+              <option value="_none">Please Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-step form-step--2 mt-90 mt-lg-140">
+      <div class="form-step--title p-4 p-lg-40">
+        02.Select Seabed Classes
+      </div>
+      <div class="form-step--form">
+        <div class="radio">
+          <label class="w-100 classes-label checked">
+            <input type="radio" name="optradio" checked>
+            <div>
+              <span class="label">3 Classes</span>
+              <div class="opt-imgs d-flex w-100">
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="radio">
+          <label class="w-100 classes-label">
+            <input type="radio" name="optradio">
+            <div>
+              <span class="label">4 Classes</span>
+              <div class="opt-imgs d-flex  w-100">
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="radio">
+          <label class="w-100 classes-label">
+            <input type="radio" name="optradio">
+            <div>
+              <span class="label">5 Classes</span>
+              <div class="opt-imgs d-flex  w-100">
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center pr-3">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+                <div class="opt-img text-center">
+                  <img src="https://via.placeholder.com/86">
+                  <div>title 1</div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-step--submit text-center">
+      <a href='' class="submit-btn d-inline-flex align-items-center">
+          <span class="mr-3">Run UW-MAP</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+      </a>
+    </div>
+
+  </section>
+
+  <section class="boxes my-35 my-lg-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-6 d-flex mb-4">
+          <a href="" class="d-block w-100">
+            <div class="box-wrapper p-4 p-lg-35">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M144 208C126.3 208 112 222.2 112 239.1C112 257.7 126.3 272 144 272s31.1-14.25 31.1-32S161.8 208 144 208zM256 207.1c-17.75 0-31.1 14.25-31.1 32s14.25 31.1 31.1 31.1s31.1-14.25 31.1-31.1S273.8 207.1 256 207.1zM368 208c-17.75 0-31.1 14.25-31.1 32s14.25 32 31.1 32c17.75 0 31.99-14.25 31.99-32C400 222.2 385.8 208 368 208zM256 31.1c-141.4 0-255.1 93.12-255.1 208c0 47.62 19.91 91.25 52.91 126.3c-14.87 39.5-45.87 72.88-46.37 73.25c-6.624 7-8.373 17.25-4.624 26C5.818 474.2 14.38 480 24 480c61.49 0 109.1-25.75 139.1-46.25c28.87 9 60.16 14.25 92.9 14.25c141.4 0 255.1-93.13 255.1-207.1S397.4 31.1 256 31.1zM256 400c-26.75 0-53.12-4.125-78.36-12.12l-22.75-7.125L135.4 394.5c-14.25 10.12-33.87 21.38-57.49 29c7.374-12.12 14.37-25.75 19.87-40.25l10.62-28l-20.62-21.87C69.81 314.1 48.06 282.2 48.06 240c0-88.25 93.24-160 207.1-160s207.1 71.75 207.1 160S370.8 400 256 400z"/>
+              </svg> -->
+              Send us your<br>FEEDBACK
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-6 d-flex mb-4">
+          <a href="" class="d-block w-100">
+            <div class="box-wrapper p-4 p-lg-35">
+              <!-- <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.5339 0.00235704C21.1554 0.13734 16.428 0.628659 13.5095 2.41512C13.3082 2.53838 13.194 2.75757 13.194 2.98673V18.7797C13.194 19.281 13.7422 19.5978 14.2044 19.3652C17.207 17.8539 21.5495 17.4416 23.6966 17.3287C24.4297 17.2901 24.9996 16.7024 24.9996 15.998V1.33482C25 0.566159 24.3333 -0.0427818 23.5339 0.00235704ZM11.49 2.41512C8.57205 0.628659 3.84462 0.137774 1.46615 0.00235704C0.666667 -0.0427818 0 0.566159 0 1.33482V15.9984C0 16.7033 0.569879 17.291 1.30295 17.3292C3.45095 17.442 7.79557 17.8548 10.7982 19.3669C11.2591 19.5991 11.8056 19.2827 11.8056 18.7827V2.97892C11.8056 2.74932 11.6918 2.53882 11.49 2.41512Z" fill="white"></path>
+              </svg> -->
+              Read the<br>Documentation
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="d-flex align-items-end mt-5">
+    <div class="container-fluid px-4">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus pretium nibh ut varius. Phasellus
+            convallis elit vitae elit fringilla, vitae tristique elit finibus. Nunc accumsan metus enim</p>
+        </div>
+        <div class="col-12 d-flex align-items-center justify-content-center justify-content-lg-end pb-4">
+          <img src="images/MM.svg" style="max-width:115px; height: auto; margin-top:15px;" class="mr-4">
+          <img src="images/neanias_logo.svg">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="below-footer py-3">
+    <ul class="nav navbar-nav d-flex flex-row justify-content-center justify-content-lg-start">
+      <li class="nav-item">
+        <a class="nav-link mx-3" href="">
+          Terms of Service
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mx-3" href="">
+          Privacy Policy
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+<div class="overlay">
+  <div class="text-center">
+  <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+    <g fill="none" fill-rule="evenodd" stroke-width="2">
+        <circle cx="22" cy="22" r="1">
+            <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="22" cy="22" r="1">
+            <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>
+  <div class="loading-text">Data processing<br>Please wait</div>
+</div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./js/custom.js"></script>
+</body>
+
+</html>
