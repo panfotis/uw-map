@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
 
+.w-50 {
+  width: 50% !important;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -213,6 +217,10 @@ textarea {
   -webkit-appearance: button;
 }
 
+output {
+  display: inline-block;
+}
+
 template {
   display: none;
 }
@@ -234,6 +242,11 @@ h1, .h1 {
 
 h3, .h3 {
   font-size: 1.75rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 code {
@@ -1128,6 +1141,10 @@ a.close.disabled {
   display: none !important;
 }
 
+.d-inline-block {
+  display: inline-block !important;
+}
+
 .d-block {
   display: block !important;
 }
@@ -1212,6 +1229,10 @@ a.close.disabled {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+.w-50 {
+  width: 50% !important;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -1238,6 +1259,10 @@ a.close.disabled {
 
 .mx-3 {
   margin-left: 1rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
 }
 
 .mr-4 {
@@ -1282,6 +1307,10 @@ a.close.disabled {
 
 .pb-1 {
   padding-bottom: 0.25rem !important;
+}
+
+.p-2 {
+  padding: 0.5rem !important;
 }
 
 .pb-2 {
@@ -1355,6 +1384,20 @@ a.close.disabled {
 
   .pb-lg-0 {
     padding-bottom: 0 !important;
+  }
+
+  
+.px-lg-5 {
+    padding-right: 3rem !important;
+  }
+
+  .pb-lg-5 {
+    padding-bottom: 3rem !important;
+  }
+
+  
+.px-lg-5 {
+    padding-left: 3rem !important;
   }
 
   .p-lg-35 {
@@ -1732,10 +1775,14 @@ section.top .logo-subtitle {
     font-size: 20px;
   }
 }
+section.top .logo {
+  max-width: 160px;
+  height: auto;
+  margin: 10px 20px;
+}
 @media (max-width: 991px) {
   section.top .logo {
-    max-width: 150px;
-    height: auto;
+    max-width: 120px;
     margin-bottom: 20px;
   }
 }
@@ -1841,6 +1888,7 @@ footer p {
     font-size: 39px;
   }
 }
+.form-step .form-step--results,
 .form-step .form-step--form {
   background: #fff;
   color: #000;
@@ -2025,8 +2073,43 @@ input[type=radio] {
   font-size: 14px;
   font-weight: 300;
 }
+.opt-imgs .opt-img img {
+  max-width: 120px;
+  height: 80px;
+  border-radius: 20px;
+}
 
 input:checked + div .opt-imgs {
   border: 2px solid #5EE85C;
   display: block;
+}
+
+.download-btn {
+  border-radius: 45px;
+  padding: 20px 40px;
+  font-weight: bold;
+  font-size: 20px;
+  background: #97D459;
+  color: #fff;
+  position: relative;
+  line-height: 1;
+}
+@media (max-width: 991px) {
+  .download-btn {
+    font-size: 18px;
+  }
+}
+.download-btn svg {
+  fill: #fff;
+  width: 50px;
+  padding-bottom: 20px;
+}
+.download-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+.download-btn:hover svg {
+  transition: all ease 0.3s;
+  transform: translatey(10px);
 }

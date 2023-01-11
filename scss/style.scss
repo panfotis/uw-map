@@ -279,9 +279,12 @@ section.top {
     }
 
     .logo{
+        max-width:160px;
+        height:auto;
+        margin:10px 20px;
         @media(max-width:991px){
-            max-width: 150px;
-            height:auto;
+            max-width: 120px;
+
             margin-bottom:20px;
         }
     }
@@ -370,6 +373,8 @@ footer{
         font-weight: bold;
     }
 
+
+    .form-step--results,
     .form-step--form {
         background: #fff;
         color: #000;
@@ -571,11 +576,50 @@ input[type="radio"]{
             font-weight: 300;
         }
 
+        img{
+            max-width: 120px;
+            height: 80px;
+            border-radius: 20px;
+          }
+
     }
 }
+
 
 
 input:checked + div .opt-imgs{
     border: 2px solid #5EE85C;
     display: block;
   }
+
+
+
+  .download-btn {
+    border-radius: 45px;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    background: #97D459;
+    color: #fff;
+    position: relative;
+    line-height: 1;
+    @media(max-width:991px){
+        font-size: 18px;
+    }
+
+    svg{
+        fill:#fff;
+        width:50px;
+        padding-bottom:20px;
+    }
+
+    &:hover{
+        color:#fff;
+        text-decoration: none;
+        transition: all ease .3s;
+        svg{
+            transition: all ease .3s;
+            transform: translatey(10px);
+        }
+    }
+}

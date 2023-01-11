@@ -1,14 +1,22 @@
 Dropzone.options.myDropzone = {
   maxFiles: 1,
-  acceptedFiles: 'image/tif',
+  acceptedFiles: 'image/tiff,.tif',
   addRemoveLinks: true,
   dictDefaultMessage: "Click or drop you tif file here",
   progressBarWidth: '100%',
   init: function() {
-    this.on("maxfilesreached", function() {
-      alert('MAX FILESSSS');
+    // this.on("maxfilesreached", function() {
+    //   alert('MAX FILESSSS');
+    // });
+    this.on("error", function(file, message, xhr) {
+      if (xhr == null ) {
+          if(message == 'You can not upload any more files.' || message == 'You can\'t upload files of this type.'){
+            this.removeFile(file);
+          }
+          console.log(message);
+          alert(message);
+      }
     });
-    //this.on("error", function(file, message, xhr) { if (xhr == null) this.removeFile(file);   alert('Only .tif files are allowed');    });
     this.on("addedfile", function(file, message, xhr) {
       $('#sample-dataset').val('_none').attr('disabled', 'disabled');
       $('.select-wrapper .notice').removeClass('d-none');
@@ -22,11 +30,22 @@ Dropzone.options.myDropzone = {
   },
 };
 
+
+
+function show_overlay(){
+  $('.overlay').css('visibility', 'visible').css('opacity', '1');
+}
+
+function hide_overlay(){
+  $('.overlay').css('visibility', 'visible').css('opacity', '1');
+}
+
+
 $(document).ready(function(){
 
   $('.submit-btn').click(function(e){
     e.preventDefault();
-    $('.overlay').css('visibility', 'visible').css('opacity', '1');
+    show_overlay();
   });
 
 

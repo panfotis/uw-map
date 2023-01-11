@@ -15,10 +15,10 @@
   <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
   <title>UW-MAP - Seabed Classification from Multispectral Multibeam Echosounder Data</title>
-  <meta name="description" content="" />
+  <!-- <meta name="description" content="" />
   <meta property="og:description" content="" />
   <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="" /> -->
 
 </head>
 
@@ -91,7 +91,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-lg-10 d-lg-flex align-items-center text-center text-lg-left">
-          <img class="logo" src="images/MM.svg">
+          <img class="logo" src="images/Neanias_Underwater_MM_mod2.svg">
           <div class="texts">
             <div class="logo-title pb-2 pb-lg-0">
               Seabed Classification
@@ -107,11 +107,7 @@
         </div>
       </div>
     </div>
-
   </section>
-
-
-
 
   <section class="top-info text-center container-fluid container-p">
     <h1 class="font-weight-bold pb-3 pb-lg-35"><img src="images/dots.svg">UW-MAP<span>An Innovative EOSC Cloud Service</span></h1>
@@ -128,7 +124,8 @@
       <div class="form-step--form">
         <div class="form-group">
           <label class="d-block" for="user-data">Upload your multispectral backscatter data</label>
-          <form action="upload" class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data" accept="image/tiff,.tif">
+          <form action="upload" class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data">
+            <!-- accept="image/tiff,.tif" -->
           </form>
         </div>
         <div class="or text-center"><span>OR</span></div>
@@ -156,21 +153,21 @@
       <div class="form-step--form">
         <div class="radio">
           <label class="w-100 classes-label checked">
-            <input type="radio" name="optradio" checked>
+            <input type="radio" name="optradio" value="3" checked>
             <div>
               <span class="label">3 Classes</span>
               <div class="opt-imgs d-flex w-100">
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/sand.jpg">
+                  <div>Fine Sand</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/mud_sand.jpg">
+                  <div>Med Sand</div>
                 </div>
                 <div class="opt-img text-center">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/rocky.jpg">
+                  <div>Rocky / Gravel</div>
                 </div>
               </div>
             </div>
@@ -178,25 +175,25 @@
         </div>
         <div class="radio">
           <label class="w-100 classes-label">
-            <input type="radio" name="optradio">
+            <input type="radio" name="optradio" value="4">
             <div>
               <span class="label">4 Classes</span>
               <div class="opt-imgs d-flex  w-100">
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/mud_sand.jpg">
+                  <div>Muddy Sand</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/fine_mud.jpg">
+                  <div>Fine Muddy Sand</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/sand_gravel.jpg">
+                  <div>Sand / Gravel</div>
                 </div>
                 <div class="opt-img text-center">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/rocky.jpg">
+                  <div>Rocky / Gravel</div>
                 </div>
               </div>
             </div>
@@ -204,29 +201,29 @@
         </div>
         <div class="radio">
           <label class="w-100 classes-label">
-            <input type="radio" name="optradio">
+            <input type="radio" name="optradio" value="5">
             <div>
               <span class="label">5 Classes</span>
               <div class="opt-imgs d-flex  w-100">
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/mud_tube_worms.jpg">
+                  <div>Muddy Sand w. Organic</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/mud_sand.jpg">
+                  <div>Muddy Sand</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/fine_mud.jpg">
+                  <div>Fine Muddy Sand</div>
                 </div>
                 <div class="opt-img text-center pr-3">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/sand_gravel.jpg">
+                  <div>Sand / Gravel</div>
                 </div>
                 <div class="opt-img text-center">
-                  <img src="https://via.placeholder.com/86">
-                  <div>title 1</div>
+                  <img src="images/classes/rocky.jpg">
+                  <div>Rocky / Gravel</div>
                 </div>
               </div>
             </div>
@@ -242,6 +239,36 @@
       </a>
     </div>
 
+  </section>
+
+  <section class="results container-fluid container-p">
+    <div class="form-step form-step--resutls mt-90 mt-lg-140">
+      <div class="form-step--title p-4 p-lg-40">
+          Results
+      </div>
+      <div class="form-step--results text-center">
+
+           <div class="results-main-image pb-4 pb-lg-5">
+                <div class="result-image-title text-center font-weight-bold">Classification Result</div>
+                <img src="images/sample-results/output.png" class="img-fluid">
+            </div>
+            <div class="d-flex px-lg-5">
+              <div class="results-images w-50 p-2">
+                <div class="result-image-title text-center">Color Composite Image</div>
+                <img src="images/sample-results/input.png" class="img-fluid">
+              </div>
+              <div class="results-images w-50 p-2">
+                <div class="result-image-title text-center pb-1">Map / Bathymetry</div>
+                <img src="images/sample-results/patricia_bath.png" class="img-fluid">
+              </div>
+            </div>
+
+            <a href="" class="download-btn d-inline-block text-center mt-4 mt-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 456c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>
+              <div class="text-center">DOWNLOAD<br>Results</div>
+            </a>
+      </div>
+    </div>
   </section>
 
   <section class="boxes my-35 my-lg-100">
@@ -275,16 +302,16 @@
     <div class="container-fluid px-4">
       <div class="row">
         <div class="col-12 col-lg-7">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus pretium nibh ut varius. Phasellus
-            convallis elit vitae elit fringilla, vitae tristique elit finibus. Nunc accumsan metus enim</p>
+          <p>This service is funded by European Union under Horizon 2020 research<br>and innovation project NEANIAS (grant agreement No.863448)</p>
         </div>
         <div class="col-12 d-flex align-items-center justify-content-center justify-content-lg-end pb-4">
-          <img src="images/MM.svg" style="max-width:115px; height: auto; margin-top:15px;" class="mr-4">
+          <img src="images/Neanias_Underwater_MM_mod2.svg" style="max-width:85px; height: auto; margin-top:15px;" class="mr-4">
           <img src="images/neanias_logo.svg">
         </div>
       </div>
     </div>
   </footer>
+
   <div class="below-footer py-3">
     <ul class="nav navbar-nav d-flex flex-row justify-content-center justify-content-lg-start">
       <li class="nav-item">
@@ -300,25 +327,23 @@
     </ul>
   </div>
 
-
-
-<div class="overlay">
-  <div class="text-center">
-  <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
-    <g fill="none" fill-rule="evenodd" stroke-width="2">
-        <circle cx="22" cy="22" r="1">
-            <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="22" cy="22" r="1">
-            <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
-        </circle>
-    </g>
-</svg>
-  <div class="loading-text">Data processing<br>Please wait</div>
-</div>
-</div>
+  <div class="overlay">
+    <div class="text-center">
+    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+      <g fill="none" fill-rule="evenodd" stroke-width="2">
+          <circle cx="22" cy="22" r="1">
+              <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="22" cy="22" r="1">
+              <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/>
+          </circle>
+      </g>
+  </svg>
+    <div class="loading-text">Data processing<br>Please wait</div>
+  </div>
+  </div>
 
 </body>
 
