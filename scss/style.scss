@@ -593,7 +593,6 @@ input:checked + div .opt-imgs{
   }
 
 
-
   .download-btn {
     border-radius: 45px;
     padding: 20px 40px;
@@ -622,4 +621,40 @@ input:checked + div .opt-imgs{
             transform: translatey(10px);
         }
     }
+}
+
+
+.return-to-form-btn{
+
+    @include font-size($p);
+    color: #2F2BF2;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    svg{
+        width: 25px;
+        margin-right:15px;
+        fill: #2F2BF2;
+    }
+
+
+    &.above{
+       color:#fff;
+
+       svg{
+            fill: #fff;
+        }
+    }
+
+
+
+}
+
+
+
+.result-image-title{
+    @include font-size($p);
 }

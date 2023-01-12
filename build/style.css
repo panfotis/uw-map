@@ -1335,7 +1335,8 @@ a.close.disabled {
   padding: 1.5rem !important;
 }
 
-.pt-4 {
+.pt-4,
+.py-4 {
   padding-top: 1.5rem !important;
 }
 
@@ -1344,13 +1345,18 @@ a.close.disabled {
   padding-right: 1.5rem !important;
 }
 
-.pb-4 {
+.pb-4,
+.py-4 {
   padding-bottom: 1.5rem !important;
 }
 
 
 .px-4 {
   padding-left: 1.5rem !important;
+}
+
+.pb-90 {
+  padding-bottom: 5.625rem !important;
 }
 
 .mt-n2 {
@@ -1384,6 +1390,10 @@ a.close.disabled {
 
   .pb-lg-0 {
     padding-bottom: 0 !important;
+  }
+
+  .pt-lg-5 {
+    padding-top: 3rem !important;
   }
 
   
@@ -2112,4 +2122,58 @@ input:checked + div .opt-imgs {
 .download-btn:hover svg {
   transition: all ease 0.3s;
   transform: translatey(10px);
+}
+
+.return-to-form-btn {
+  font-size: 18px;
+  color: #2F2BF2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 992px) {
+  .return-to-form-btn {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .return-to-form-btn {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .return-to-form-btn {
+    font-size: 22px;
+  }
+}
+.return-to-form-btn svg {
+  width: 25px;
+  margin-right: 15px;
+  fill: #2F2BF2;
+}
+.return-to-form-btn.above {
+  color: #fff;
+}
+.return-to-form-btn.above svg {
+  fill: #fff;
+}
+
+.result-image-title {
+  font-size: 18px;
+}
+@media screen and (min-width: 992px) {
+  .result-image-title {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .result-image-title {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .result-image-title {
+    font-size: 22px;
+  }
 }

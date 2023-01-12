@@ -37,7 +37,31 @@ function show_overlay(){
 }
 
 function hide_overlay(){
-  $('.overlay').css('visibility', 'visible').css('opacity', '1');
+  $('.overlay').css('visibility', 'hidden').css('opacity', '0');
+}
+
+
+function fakeShowResults(){
+
+  setTimeout(
+    function() {
+
+      //remove form
+      $('section.form').remove();
+      //hide overlay
+      hide_overlay();
+
+      let results_div = $('section.results')
+      //show results div
+      results_div.removeClass('d-none');
+
+      //scroll to results div
+      $([document.documentElement, document.body]).animate({
+        scrollTop: results_div.offset().top
+      }, 1000);
+
+    }, 4000);
+
 }
 
 
@@ -46,6 +70,11 @@ $(document).ready(function(){
   $('.submit-btn').click(function(e){
     e.preventDefault();
     show_overlay();
+
+    //just for presentation purposes
+    //we will remove it
+    fakeShowResults();
+
   });
 
 
