@@ -12,6 +12,8 @@ Dropzone.options.myDropzone = {
       if (xhr == null ) {
           if(message == 'You can not upload any more files.' || message == 'You can\'t upload files of this type.'){
             this.removeFile(file);
+          } else {
+
           }
           console.log(message);
           alert(message);
@@ -27,6 +29,11 @@ Dropzone.options.myDropzone = {
         $('.select-wrapper .notice').addClass('d-none');
       }
     });
+    this.on("success", function(file) {
+          console.log(file.name);
+    });
+
+
   },
 };
 
@@ -68,6 +75,7 @@ function fakeShowResults(){
 $(document).ready(function(){
 
   $('.submit-btn').click(function(e){
+
     e.preventDefault();
     show_overlay();
 
